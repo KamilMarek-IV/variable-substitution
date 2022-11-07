@@ -37,8 +37,13 @@ export class JsonSubstitution {
                             }
                             break;
                         case 'string':
-                            console.log('SubstitutingValueonKeyWithString' , jsonChild , resultNode.value);
-                            jsonObject[jsonChild] = resultNode.value;
+                            if(resultNode.value != '') {
+                                console.log('SubstitutingValueonKeyWithString' , jsonChild , resultNode.value);
+                                jsonObject[jsonChild] = resultNode.value;
+                            }
+                            else {
+                                console.log('Skip substituion for String' , jsonChild , resultNode.value);
+                            }
                     }
                     isValueChanged = true;
                 }
